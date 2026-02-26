@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RHINOAESTHETICON 2026 | Registration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="hero section">
+      <div class="container">
+        <p class="hero__kicker">International Rhinoplasty &amp; Aesthetic Medicine Conference</p>
+        <h1>RHINOAESTHETICON 2026</h1>
+        <p class="hero__meta">Jammu, India</p>
+        <p class="hero__meta">21–22 August 2026</p>
+        <div class="gold-divider" aria-hidden="true"></div>
+      </div>
+    </header>
+
+    <main>
+      <section class="about section" aria-labelledby="about-title">
+        <div class="container">
+          <h2 id="about-title">About the Conference</h2>
+          <p>
+            RHINOAESTHETICON 2026 convenes leading ENT surgeons, dermatologists, plastic surgeons,
+            and postgraduate trainees for a focused academic exchange on contemporary rhinoplasty and
+            evidence-based aesthetic medicine. The program emphasizes surgical precision, practical
+            learning, and cross-disciplinary excellence.
+          </p>
+        </div>
+      </section>
+
+      <section class="registration section" aria-labelledby="registration-title">
+        <div class="container">
+          <h2 id="registration-title">Conference Registration</h2>
+          <p class="notice" id="earlyBirdNotice">Early Bird Registration ends on March 15.</p>
+
+          <form id="registrationForm" action="javascript:void(0);">
+            <fieldset>
+              <legend>Personal Information</legend>
+              <div class="grid">
+                <label>
+                  Nationality *
+                  <select id="nationality" name="nationality" required>
+                    <option value="Indian">Indian</option>
+                    <option value="International">International</option>
+                  </select>
+                </label>
+                <label id="countryWrapper" class="hidden">
+                  Country *
+                  <input type="text" id="country" name="country" />
+                </label>
+                <label>
+                  Full Name *
+                  <input type="text" name="fullName" required />
+                </label>
+                <label>
+                  Email *
+                  <input type="email" name="email" required />
+                </label>
+                <label>
+                  Phone *
+                  <input type="tel" name="phone" required />
+                </label>
+                <label>
+                  Degree
+                  <select name="degree">
+                    <option value="">Select degree</option>
+                    <option>MBBS</option>
+                    <option>MS</option>
+                    <option>MD</option>
+                    <option>DNB</option>
+                  </select>
+                </label>
+                <label>
+                  Specialization
+                  <input type="text" name="specialization" />
+                </label>
+                <label>
+                  Medical Council Registration Number
+                  <input type="text" name="registrationNumber" />
+                </label>
+                <label>
+                  Hospital / Clinic Name /College Name
+                  <input type="text" name="institute" />
+                </label>
+                <label>
+                  City
+                  <input type="text" name="city" />
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Product Selection</legend>
+
+              <div class="checkbox-group">
+                <h3>Registration</h3>
+                <label class="check-item">
+                  <input id="registrationCheck" type="checkbox" name="registration" />
+                  <span>Conference Registration – <strong id="registrationPriceLabel">₹7,500</strong></span>
+                </label>
+              </div>
+
+              <div class="checkbox-group">
+                <h3>Nose Track</h3>
+                <label class="check-item">
+                  <input class="workshop-item" type="checkbox" name="noseSimulation" data-base-price="7500" />
+                  <span>Practical Nose Simulation – <strong class="workshop-price">₹7,500</strong></span>
+                </label>
+                <label class="check-item">
+                  <input class="workshop-item" type="checkbox" name="rhinoplastyWork" data-base-price="7500" />
+                  <span>Hands-on Rhinoplasty Surgical Work – <strong class="workshop-price">₹7,500</strong></span>
+                </label>
+              </div>
+
+              <div class="checkbox-group">
+                <h3>Aesthetic Track</h3>
+                <label class="check-item">
+                  <input class="workshop-item" type="checkbox" name="botox" data-base-price="7500" />
+                  <span>Botox Hands-on Workshop – <strong class="workshop-price">₹7,500</strong></span>
+                </label>
+                <label class="check-item">
+                  <input class="workshop-item" type="checkbox" name="fillers" data-base-price="7500" />
+                  <span>Fillers Hands-on Workshop – <strong class="workshop-price">₹7,500</strong></span>
+                </label>
+              </div>
+
+              <article class="combo-card" aria-label="Premium Full Access Combo">
+                <label class="check-item combo-check">
+                  <input id="comboCheck" type="checkbox" name="fullCombo" />
+                  <span class="combo-card__title">Premium Full Access Combo</span>
+                </label>
+                <p>(Registration + All 4 Workshops)</p>
+                <p class="combo-card__price" id="comboPriceLabel">₹26,000</p>
+              </article>
+            </fieldset>
+
+            <section class="price-summary" aria-live="polite">
+              <p>Registration: <strong id="breakdownRegistration">Not selected</strong></p>
+              <p>Workshops selected: <strong id="selectedCount">0</strong></p>
+              <p>Workshops Amount: <strong id="breakdownWorkshops">₹0</strong></p>
+              <p>Combo applied: <strong id="breakdownCombo">No</strong></p>
+              <p class="total">Total Amount: <span id="totalAmount">₹0</span></p>
+            </section>
+
+            <p id="formError" class="form-error hidden" role="alert"></p>
+            <button type="submit" class="submit-btn">Submit Registration</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
