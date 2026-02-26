@@ -1,0 +1,248 @@
+:root {
+  --bg-dark: #0b1f3a;
+  --bg-mid: #132e57;
+  --accent: #d4af37;
+  --text-main: #f5f7fa;
+  --text-secondary: #c5ced8;
+  --card-bg: rgba(11, 31, 58, 0.7);
+  --border: rgba(212, 175, 55, 0.7);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Inter", "Poppins", system-ui, sans-serif;
+  color: var(--text-main);
+  background: linear-gradient(165deg, var(--bg-dark), var(--bg-mid));
+  line-height: 1.6;
+}
+
+.container {
+  width: min(92%, 980px);
+  margin: 0 auto;
+}
+
+.section {
+  padding: 2.5rem 0;
+}
+
+h1,
+h2,
+h3,
+legend {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+h1 {
+  margin: 0.3rem 0;
+  color: var(--accent);
+  font-size: clamp(2rem, 7vw, 4rem);
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+}
+
+.hero__kicker,
+.hero__meta,
+.about p,
+label,
+.notice {
+  color: var(--text-secondary);
+}
+
+.gold-divider {
+  margin-top: 1rem;
+  width: 150px;
+  height: 2px;
+  background: var(--accent);
+}
+
+.notice {
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.25rem;
+  background: rgba(212, 175, 55, 0.08);
+  font-weight: 500;
+}
+
+.registration-form {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card-bg);
+  backdrop-filter: blur(4px);
+  padding: 1rem;
+}
+
+fieldset {
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 0 0 1rem;
+}
+
+legend {
+  color: var(--accent);
+  padding: 0 0.4rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+}
+
+label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.95rem;
+}
+
+input,
+select {
+  width: 100%;
+  background: rgba(245, 247, 250, 0.06);
+  border: 1px solid rgba(197, 206, 216, 0.35);
+  border-radius: 6px;
+  padding: 0.65rem 0.75rem;
+  color: var(--text-main);
+  font: inherit;
+}
+
+input:focus,
+select:focus {
+  outline: 1px solid var(--accent);
+  border-color: var(--accent);
+}
+
+option {
+  color: #102546;
+}
+
+.checkbox-group {
+  margin-bottom: 1rem;
+}
+
+.checkbox-group h3 {
+  margin: 0 0 0.45rem;
+  color: var(--text-main);
+  font-size: 1.1rem;
+}
+
+.check-item {
+  display: flex;
+  gap: 0.65rem;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.check-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);
+  margin-top: 0.2rem;
+}
+
+.combo-card {
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-top: 1rem;
+  background: linear-gradient(180deg, rgba(212, 175, 55, 0.14), rgba(212, 175, 55, 0.05));
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.combo-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 24px rgba(0, 0, 0, 0.25);
+}
+
+.combo-check {
+  margin-bottom: 0.2rem;
+}
+
+.combo-card__title {
+  margin: 0;
+  color: var(--accent);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.15rem;
+}
+
+.combo-card__price {
+  margin: 0.4rem 0 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.price-summary {
+  border-top: 1px solid rgba(212, 175, 55, 0.4);
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+
+.price-summary .total {
+  font-size: 1.15rem;
+}
+
+#totalAmount {
+  color: var(--accent);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.form-error {
+  margin: 0 0 0.8rem;
+  color: #ffd0d0;
+}
+
+.submit-btn {
+  width: 100%;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--text-main);
+  border-radius: 8px;
+  padding: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover,
+.submit-btn:focus {
+  background: rgba(212, 175, 55, 0.18);
+}
+
+input:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (min-width: 700px) {
+  .section {
+    padding: 3.75rem 0;
+  }
+
+  .registration-form {
+    padding: 1.5rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
